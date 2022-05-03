@@ -16,7 +16,19 @@ function outputBMI(event){
     } else {
         var result = weight / ((height/100) * (height/100));
         var resInputField = document.getElementById("bmi_result_value");
-        resInputField.innerHTML = result;
+        resInputField.innerHTML = result.toPrecision(4);
+        var resInputText = document.getElementById("bmi_result_text");
+        if(result < 25 && result > 20){
+            resInputText.innerHTML = "Das ist Normalgewicht";
+            resInputText.style.color = "green";
+        }
+        else if(result > 25){
+            resInputText.innerHTML = "Das ist Übergewicht";
+            resInputText.style.color = "red";
+        } else {
+            resInputText.innerHTML = "Das ist Untergewicht";
+            resInputText.style.color = "red";
+        }
     }
 }
 
