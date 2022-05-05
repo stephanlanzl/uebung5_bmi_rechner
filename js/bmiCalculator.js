@@ -1,10 +1,16 @@
 function initBMICalculator() {
     alert("Let's start coding...");
     setInputHeightListener();
+    setInputWeightListener();
 }
 
 function setInputHeightListener(){
     var logKey = document.getElementById("input_field_height");
+    logKey.addEventListener("input", outputBMI);
+}
+
+function setInputWeightListener(){
+    var logKey = document.getElementById("input_field_weight");
     logKey.addEventListener("input", outputBMI);
 }
 
